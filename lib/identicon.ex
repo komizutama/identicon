@@ -39,10 +39,11 @@ def build_grid(%Identicon.Image{hex: hex} = image) do
   |> Enum.chunk(3) #break into chunks of three
   #mirror_rows and put into a new list
   |> Enum.map(&mirror_row/1) #&mirror_row/1 tells it to pass everything to mirror_row with an arrity of 1
+  |> List.flatten
 end
 
 @doc """
-helper function to mirror rows in build grid
+A helper function to mirror rows in build grid
 """
 def mirror_row(row) do
     #[145, 46, 200]
@@ -50,6 +51,7 @@ def mirror_row(row) do
     #[145, 46, 200, 46, 145]
     row ++ [second, first]
   end
+
 # Convert grid into image
 # Save identicon to disk as an image
 
