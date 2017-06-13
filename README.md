@@ -1,6 +1,6 @@
 # Identicon
 
-**TODO: Add description**
+**Elixir Module for building an 250x250 identicon based on MD5 hash**
 
 ## Installation
 
